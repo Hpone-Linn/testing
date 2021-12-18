@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <!DOCTYPE html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<style>
+     body{
+         margin:auto;
+         text-align:center;
+         font-family: sans-serif;
+       
+     }
+     .changer{
+         padding: 20px 30px 30px 30px;
+         box-shadow: 0px 2px 1px;
+         background-color: white;
+     }
+     button{
+         font-size: 18px;
+         background-color: white;
+         border: 3px solid azure;
+         padding: 10px;
+         border-radius: 50px;
+     }
+     button:hover{
+        border: 3px solid rgb(50,200,200);
+         padding: 10px; 
+     }
+     .buttons{
+         display: none;
+     }
+</style>
+<body>
+    <div class = changer>
+        <h2>
+            <span>Background Changer</span>
+            <button class="control">Options</button>
+        </h2>
+        <div class="buttons">       
+        <button id="default">Default</button>
+        <button id="purple">Purple</button>
+        <button id="cyan">Cyan</button>
+        <button id="yellow">Yellow</button>
+        <button id="light-blue">Light Blue</button>
+        <button id="light-green">Light Green</button>
+        </div>
+    </div>
+</body>
+<script>
+    var body = document.querySelector("body");
+    this.addEventListener('click', (event) => {
+     if(event.target.id == "default"){
+        body.style.backgroundColor = "rgb(255,255,255)"
+     }else if (event.target.id == "purple") {
+         body.style.backgroundColor ="purple"
+     }else if (event.target.id == "cyan") {
+         body.style.backgroundColor ="rgb(0,255,255)"
+    }else if (event.target.id == "yellow") {
+         body.style.backgroundColor ="rgb(255,255,0)"
+    }else if (event.target.id == "light-blue") {
+         body.style.backgroundColor ="lightblue"
+    }else if (event.target.id == "light-green") {
+         body.style.backgroundColor ="rgb(50,200,50)"
+    }else{
+        console.log( "Something went wrong")
+    }        
+    });
+
+    $(document).ready(function(){
+        $('.control').click( () => {
+          $('.buttons').slideToggle(); 
+        })
+    });   
+</script>
+</html>
